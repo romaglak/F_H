@@ -1,0 +1,160 @@
+#include <iostream>
+#include <math.h>
+#include <vector>
+#include <time.h>
+
+using namespace std;
+
+
+
+int modPow(int a, int b, int mod)
+{
+	int res = 1;
+	for (int i = b; i > 0; i--)
+	{
+		res = res * a;
+		if (res > mod)
+		{
+			res = res % mod;
+		}
+	}
+	return res;
+}
+
+static bool MillerRabinTest(int n, int k)
+{
+	if (n <= 1)
+		return false;
+	if (n == 2)
+		return true;
+	if (n % 2 == 0)
+		return false;
+	int s = 0, d = n - 1;
+	while (d % 2 == 0)
+	{
+		d /= 2;
+		s++;
+	}
+
+	int randNum = rand() + 2;
+
+	for (int i = 0; i < k; i++)
+	{
+		long a = randNum % (n - 1);
+		int x = modPow(a, d, n);
+		if (x == 1 || x == n - 1)
+			continue;
+		for (int j = 0; j < s - 1; j++)
+		{
+			x = (x*x) % n;
+			if (x == 1)
+				return false;
+			if (x == n - 1)
+				break;
+		}
+		if (x != n - 1)
+			return false;
+	}
+	return true;
+}
+
+int genP()
+{
+	int a;
+	bool test;
+	do{
+		a = rand();
+		int k = log2(a);
+		test = MillerRabinTest(a, k);
+	} while (!test);
+	return a;
+
+}
+
+int generator(int p) {
+	vector<int> fact;
+	int phi = p - 1, n = phi;
+	for (int i = 2; i*i <= n; ++i)
+		if (n % i == 0) {
+			fact.push_back(i);
+			while (n % i == 0)
+				n /= i;
+		}
+	if (n > 1)
+		fact.push_back(n);
+
+	for (int res = 2; res <= p; ++res) {
+		bool ok = true;
+		for (size_t i = 0; i<fact.size() && ok; ++i)
+			ok &= modPow(res, phi / fact[i], p) != 1;
+		if (ok)  return res;
+	}
+	return -1;
+}
+
+
+class Client{
+private:
+	int a, K;
+public:
+	int g, p, secKey, A;
+	Client(int a)
+	{
+		this->a = a;
+		this->g = 0;
+		this->p = 0;
+		this->K = 0;
+		this->A = 0;
+		this->secKey = 0;
+	}
+	void genPublicKey()
+	{
+		//this->A = (int)fmod(pow(this->g, this->a),this->p);
+		this->A = modPow(this->g, this->a, this->p);
+	}
+	void secPublicKey(int B)
+	{
+		this->secKey = B;
+	}
+	void genPrivateKey()
+	{
+		//this->K = (int)fmod(pow(secKey, this->a),this->p);
+		this->K = modPow(this->secKey, this->a, this->p);
+	}
+	void showPrivateKey()
+	{
+		cout << "Private key = " << this->K << "\n";
+	}
+
+
+};
+
+
+
+int main()
+{
+	srand(time(0));
+
+	Client Alice(23);
+	Client Bob(15);
+
+	Alice.p = genP();
+	Alice.g = generator(Alice.p);
+
+	Bob.p = Alice.p;
+	Bob.g = Alice.g;
+
+	Alice.genPublicKey();
+	Bob.genPublicKey();
+	Alice.secPublicKey(Bob.A);
+	Bob.secPublicKey(Alice.A);
+
+	Alice.genPrivateKey();
+	Bob.genPrivateKey();
+
+	Alice.showPrivateKey();
+	Bob.showPrivateKey();
+
+	system("pause");
+	return 0;
+}
