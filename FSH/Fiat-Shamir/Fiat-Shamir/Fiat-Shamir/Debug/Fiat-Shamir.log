@@ -1,0 +1,17 @@
+﻿Сборка начата 28.12.2015 8:28:00.
+     1>Проект "D:\Work\cods\4 курс\Fiat-Shamir-master\Fiat-Shamir-master\Fiat-Shamir\Fiat-Shamir\Fiat-Shamir.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _USING_V110_SDK71_ /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>d:\work\cods\4 курс\fiat-shamir-master\fiat-shamir-master\fiat-shamir\fiat-shamir\main.cpp(29): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>d:\work\cods\4 курс\fiat-shamir-master\fiat-shamir-master\fiat-shamir\fiat-shamir\main.cpp(53): warning C4244: инициализация: преобразование "double" в "long", возможна потеря данных
+     1>d:\work\cods\4 курс\fiat-shamir-master\fiat-shamir-master\fiat-shamir\fiat-shamir\main.cpp(179): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1190,5): warning MSB8030: The linker switch "Minimum Required Version" requires "SubSystem" to be set.  Without "SubSystem", the "Minimum Required Version" would not be passed to linker and could prevent to the output binary from running on older Operating Systems.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Work\cods\4 курс\Fiat-Shamir-master\Fiat-Shamir-master\Fiat-Shamir\Debug\Fiat-Shamir.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Work\cods\4 курс\Fiat-Shamir-master\Fiat-Shamir-master\Fiat-Shamir\Debug\Fiat-Shamir.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Work\cods\4 курс\Fiat-Shamir-master\Fiat-Shamir-master\Fiat-Shamir\Debug\Fiat-Shamir.lib" /MACHINE:X86 Debug\main.obj
+         Fiat-Shamir.vcxproj -> D:\Work\cods\4 курс\Fiat-Shamir-master\Fiat-Shamir-master\Fiat-Shamir\Debug\Fiat-Shamir.exe
+     1>Сборка проекта "D:\Work\cods\4 курс\Fiat-Shamir-master\Fiat-Shamir-master\Fiat-Shamir\Fiat-Shamir\Fiat-Shamir.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:02.26

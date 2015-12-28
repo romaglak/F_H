@@ -1,0 +1,9 @@
+﻿Построение начато 28.12.2015 20:34:42.
+     1>Проект "C:\Users\user\Desktop\mental\mental\mental.vcxproj" в узле 2 (целевые объекты Build).
+       Файл проекта содержит ToolsVersion="12.0". Возможно, этот набор инструментов неизвестен или отсутствует (в этом случае проблему можно устранить, установив подходящую версию MSBuild), либо для данной сборки определено конкретное значение ToolsVersion в параметрах политики. Проект обрабатывается как имеющий ToolsVersion="4.0". Дополнительные сведения см. по ссылке http://go.microsoft.com/fwlink/?LinkId=291333.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.Cpp.Platform.targets(44,5): error MSB8020: The builds tools for v120 (Platform Toolset = 'v120') cannot be found. To build using the v120 build tools, either click the Project menu or right-click the solution, and then select "Update VC++ Projects...". Install v120 to build using the v120 build tools.
+     1>Построение проекта "C:\Users\user\Desktop\mental\mental\mental.vcxproj" завершено (целевые объекты Build) с ошибкой.
+
+Сбой построения.
+
+Затраченное время: 00:00:00.03
